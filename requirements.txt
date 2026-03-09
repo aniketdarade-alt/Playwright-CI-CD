@@ -1,0 +1,13 @@
+# Core Framework
+playwright==1.49.0
+pytest-playwright==0.5.2
+
+# Test Execution & Parallelization
+pytest==8.0.0
+pytest-xdist==3.5.0
+
+# Environment & Reporting
+python-dotenv==1.0.1
+pytest-html==4.1.1
+allure-pytest==2.13.2
+PyYAML==6.0.3

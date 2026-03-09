@@ -1,0 +1,24 @@
+# config/global_config.yaml
+
+# Browser Execution Settings
+browser_settings:
+  default_browser: "chromium"  # chromium, firefox, webkit
+  headless: false
+  slow_mo: 500                 # delay in ms between actions
+  timeout: 60000               # global timeout in ms
+
+# Viewport / Screen Settings
+viewports:
+  desktop: { width: 1280, height: 720 }
+  tablet: { width: 768, height: 1024 }
+  mobile: { width: 375, height: 667 }
+
+# Environment URLs & Variables
+env_variables:
+  base_url: "https://myacl.acldigital.com/"
+  api_base_url: "https://api.myacl.acldigital.com/v1"
+
+# Framework Paths
+paths:
+  test_results: "reports/results"
+  screenshots: "reports/screenshots"
