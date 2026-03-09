@@ -3,7 +3,7 @@
 # Browser Execution Settings
 browser_settings:
   default_browser: "chromium"  # chromium, firefox, webkit
-  headless: false
+  headless: true
   slow_mo: 500                 # delay in ms between actions
   timeout: 60000               # global timeout in ms
 
