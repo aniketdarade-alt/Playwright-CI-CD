@@ -2,7 +2,7 @@
 playwright==1.49.0
 pytest-playwright==0.5.2
 
-# Test Execution & Parallelization
+# Test Execution & Parallelization pytest-xdist for parallel runs 
 pytest==8.0.0
 pytest-xdist==3.5.0
 
