@@ -27,5 +27,5 @@ class ConfigParser:
         except (KeyError, TypeError):
             return default
 
-# Single instance to be used across the framework
+# Single instance to be used across the Frameworkk
 config = ConfigParser()
