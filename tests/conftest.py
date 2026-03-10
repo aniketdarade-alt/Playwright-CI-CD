@@ -2,9 +2,36 @@ import pytest
 from playwright.sync_api import sync_playwright
 from playwright.sync_api import Page
 from config.config_parser import config
+import yamale
+from pathlib import Path
 
 
 
+def pytest_sessionstart(session):
+    # Get the project root directory
+    root = Path(session.config.rootdir)
+    
+    # Define paths relative to the root
+    schema_path = root / 'test_config_schema.yaml'
+    data_path = root / 'config' / 'global_config.yaml' # Match your folder structure
+
+    print(f"\n🔍 Validating: {data_path.name}...")
+
+    if not data_path.exists():
+        pytest.exit(f"❌ Configuration file not found at {data_path}")
+
+    try:
+        # Load the schema and data
+        schema = yamale.make_schema(str(schema_path))
+        data = yamale.make_data(str(data_path))
+
+        # Validate
+        yamale.validate(schema, data)
+        print("✅ Config validation passed!")
+
+    except Exception as e:
+        # This catches schema errors AND validation errors
+        pytest.exit(f"❌ Config Validation Error:\n{e}", returncode=1)
 
 
 @pytest.fixture(scope="session")

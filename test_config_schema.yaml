@@ -1,0 +1,33 @@
+# test_config_schema.yaml
+
+# Main Structure
+browser_settings: include('browser_schema')
+viewports: include('viewport_schema')
+env_variables: include('env_schema')
+paths: include('path_schema')
+
+---
+# Sub-Schemas (Definitions)
+
+browser_schema:
+  default_browser: enum('chromium', 'firefox', 'webkit')
+  headless: bool()
+  slow_mo: int(min=0)
+  timeout: int(min=1000)
+
+viewport_schema:
+  desktop: include('dimension')
+  tablet: include('dimension')
+  mobile: include('dimension')
+
+dimension:
+  width: int(min=320)
+  height: int(min=480)
+
+env_schema:
+  base_url: str()
+  api_base_url: str()
+
+path_schema:
+  test_results: str()
+  screenshots: str()
