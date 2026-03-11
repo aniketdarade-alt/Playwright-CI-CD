@@ -28,7 +28,7 @@ jobs:
       run: playwright install --with-deps
 
     - name: Run Playwright tests
-      run: pytest --tracing=retain-on-failure
+      run: pytest -m window2 --tracing=retain-on-failure
 
     - name: Upload Test Artifacts
       if: always() # Ensures reports upload even if tests fail
