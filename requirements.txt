@@ -12,3 +12,4 @@ pytest-html==4.1.1
 allure-pytest==2.13.2
 PyYAML==6.0.3
 yamale==6.1.0
+pytest-sugar==1.1.1
